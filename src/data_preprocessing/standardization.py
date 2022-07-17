@@ -22,3 +22,10 @@ def apply_min_max_scaler(serie: pd.Series) -> pd.Series:
     result: pd.Series = pd.Series(data_scaled.flatten())
     result = result.round(decimals=3)
     return result
+
+
+def standardize(dataframe: pd.DataFrame) -> pd.DataFrame:
+    for column in dataframe:
+        if dataframe[column].dtype == int or dataframe[column].dtype == float:
+            dataframe[column] = apply_standard_scaler(dataframe[column])
+    return dataframe

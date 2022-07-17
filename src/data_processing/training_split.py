@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def split_training_dataset(dataframe: pd.DataFrame, label_name: str, training_ratio: float) -> tuple:
+def split(dataframe: pd.DataFrame, label_name: str, training_ratio: float) -> tuple:
     label: pd.Series = dataframe[label_name]
     del dataframe[label_name]
 
